@@ -7,14 +7,13 @@ const PORT = process.env.PORT || 8080;
 const { authRouter } = require("./routes/auth.routes");
 const { productRouter } = require("./routes/product.routes");
 const { connection } = require("./configs/database");
-
 app.use(express.json());
 app.use(cookieParser());
 
 // Enable CORS with credentials
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend domain
+    origin: "http://localhost:5173",
     credentials: true, // Allow credentials (cookies) to be sent
   })
 );
