@@ -5,7 +5,7 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/auth/action";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const { user, error } = useSelector((state) => state.authReducer);
@@ -61,6 +61,14 @@ const Login = () => {
             </Button>
           </Form.Item>
         </Form>
+
+        {/* Link to Register page */}
+        <div style={{ textAlign: "center", marginTop: "10px" }}>
+          Don't have an account?
+          <Link to="/register">
+            <Button type="link">Register</Button>
+          </Link>
+        </div>
       </Card>
     </div>
   );
